@@ -20,14 +20,13 @@ pipeline {
 
         stage('Build Application') {
             steps {
-
+                sh 'chmod +x mvnw'
                 sh './mvnw clean package'
             }
         }
 
         stage('Run Unit Tests') {
             steps {
-                sh 'chmod +x mvnw'
                 sh './mvnw test'
             }
         }
